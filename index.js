@@ -1,0 +1,86 @@
+/*
+Question 1: FizzBuzz
+Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for
+multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5, print
+"FizzBuzz".*/
+
+for (i = 1; i < 100; i++) {
+    if (i % 3 === 0) {
+      console.log(` ${i} :fizz`);
+    }
+    if (i % 3 === 0) {
+      console.log(` ${i} : Buzz`);
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      console.log(`${i} : FizzBuzz`);
+    }
+  }
+  
+  // Q2
+  // Write a program to generate the Fibonacci sequence up to 100.
+  
+  const fSequence = (limit) => {
+    let sequence = [0, 1];
+    for (let i = 2; ; i++) {
+      let next = sequence[i - 1] + sequence[i - 2];
+      if (next > limit) {
+        break;
+      }
+      sequence.push(next);
+    }
+    return sequence;
+  };
+  
+  fSequence(100);
+  
+  /*
+  Question 3: Power of Two
+  Write a program that takes an integer as input and returns true if the input is a power of two.
+  */
+  const no = Number(prompt("enter number"));
+  if ((no & (no - 1)) === 0 && no !== 0) {
+    alert(`true `);
+  } else {
+    alert("false");
+  }
+  
+  /*
+  Question 4: Capitalize Words
+  Write a program that accepts a string as input, capitalizes the first letter of each word in the
+  string, and then returns the result string.
+  Examples:
+  "hi"=> returns "Hi"
+  "i love programming"=> returns "I Love Programming"
+  */
+  
+  const capital = (words) => {
+    const capitals = words.split(" ");
+    const capitalizedWords = [];
+    for (const word of capitals) {
+      capitalizedWords.push(word[0].toUpperCase() + word.slice(1));
+    }
+    console.log(capitalizedWords.join(" "));
+  };
+ 
+  capital("i love programming");
+  capital("hi");
+  capital("who are you");
+  
+  /*
+  Question 5: Reverse Integer
+  Write a program that takes an integer as input and returns an integer with reversed digit
+  ordering.
+  Examples:
+  For input 500, the program should return 5.
+  For input -56, the program should return -65.
+  For input -90, the program should return -9.
+  For input 91, the program should return 19.
+  */
+  
+  const reversedInteger = (integer) => {
+    const reversedInt = parseInt(integer.toString().split("").reverse().join(""));
+    return integer >= 0 ? reversedInt : -reversedInt;
+  };
+  console.log(reversedInteger(500));
+  console.log(reversedInteger(-56));
+  console.log(reversedInteger(-90));
+  console.log(reversedInteger(-19));
